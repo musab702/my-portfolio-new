@@ -21,7 +21,7 @@ export const HeroSection = () => {
           </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground max-2-2xl mx-auto opacity-0 animate-fade-in-delay-3">
-            I’m a results-driven Fullstack Developer with 3+ years of crafting high-performance code. Skilled in Java, Spring Boot, Python, SQL, and React, I specialize in building scalable apps and cutting down response times. As an AWS-certified cloud wrangler and CI/CD automation enthusiast, I love designing microservices that thrive in the cloud while keeping Agile chaos fun and productive.
+              I’m a results-driven Fullstack Developer with professional experience delivering high-performance solutions. Skilled in Java, Spring Boot, Python, SQL, and React, I focus on building scalable apps and optimizing response times. As an AWS-certified cloud wrangler and CI/CD automation enthusiast, I enjoy designing microservices that thrive in the cloud while keeping Agile chaos fun and productive.
           </p>
 
           <div className="pt-4 opacity-0 animate-fade-in-delay-4">
