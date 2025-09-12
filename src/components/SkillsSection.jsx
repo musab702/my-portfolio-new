@@ -3,31 +3,32 @@ import { cn } from "@/lib/utils";
 
 const skills = [
   // Frontend
-  { name: "HTML/CSS", level: 95, category: "frontend" },
-  { name: "JavaScript", level: 90, category: "frontend" },
-  { name: "React", level: 90, category: "frontend" },
-  { name: "Tailwind CSS", level: 90, category: "frontend" },
-  { name: "Next.js", level: 80, category: "frontend" },
+  { name: "React", logo: "/assets/skills/React.svg", category: "frontend" },
+  { name: "Next.js", logo: "/assets/skills/Next.js.svg", category: "frontend" },
+  { name: "Tailwind CSS", logo: "/assets/skills/Tailwind CSS.svg", category: "frontend" },
+  { name: "Vue.js", logo: "/assets/skills/Vue.js.svg", category: "frontend" },
+  { name: "Angular", logo: "/assets/skills/AngularJS.svg", category: "frontend" },
 
   // Backend
-  { name: "Java", level: 95, category: "backend" },
-  { name: "Python", level: 95, category: "backend" },
-  { name: "Golang", level: 85, category: "backend" },
-  { name: "SpringBoot", level: 95, category: "backend" },
-  { name: "Node.js", level: 80, category: "backend" },
-  { name: "Express", level: 75, category: "backend" },
-  { name: "MongoDB", level: 70, category: "backend" },
-  { name: "MySQL", level: 65, category: "backend" },
-  
+  { name: "Spring Boot", logo: "/assets/skills/Spring.svg", category: "backend" },
+  { name: "Node.js", logo: "/assets/skills/Node.js.svg", category: "backend" },
+  { name: "Express", logo: "/assets/skills/Express.svg", category: "backend" },
+  { name: "Nest.js", logo: "/assets/skills/Nest.js.svg", category: "backend" },
+  { name: "FastAPI", logo: "/assets/skills/FastAPI.svg", category: "backend" },
+  { name: "Flask", logo: "/assets/skills/Flask.svg", category: "backend" },
+  { name: "Go", logo: "/assets/skills/Go.svg", category: "backend" },
 
   // Tools
-  { name: "Amazon Web Services", level: 96, category: "tools" },
-  { name: "Git/GitHub", level: 95, category: "tools" },
-  { name: "Google Cloud Platform", level: 95, category: "tools" },
-  { name: "Docker", level: 85, category: "tools" },
-  { name: "Kubernetes", level: 80, category: "tools" },
-  { name: "Jenkins", level: 70, category: "tools" },
- 
+  { name: "MongoDB", logo: "/assets/skills/MongoDB.svg", category: "tools" },
+  { name: "PostgreSQL", logo: "/assets/skills/PostgresSQL.svg", category: "tools" },
+  { name: "MySQL", logo: "/assets/skills/MySQL.svg", category: "tools" },
+  { name: "AWS", logo: "/assets/skills/AWS.svg", category: "tools" },
+  { name: "Google Cloud", logo: "/assets/skills/Google Cloud.svg", category: "tools" },
+  { name: "Terraform", logo: "/assets/skills/HashiCorp Terraform.svg", category: "tools" },
+  { name: "Jenkins", logo: "/assets/skills/Jenkins.svg", category: "tools" },
+  { name: "Docker", logo: "/assets/skills/Docker.svg", category: "tools" },
+  { name: "Kubernetes", logo: "/assets/skills/Kubernetes.svg", category: "tools" },
+  { name: "Linux", logo: "/assets/skills/Linux.svg", category: "tools" },
 ];
 
 const categories = ["all", "frontend", "backend", "tools"];
@@ -42,7 +43,7 @@ export const SkillsSection = () => {
     <section id="skills" className="py-24 px-4 relative bg-secondary/30">
       <div className="container mx-auto max-w-5xl">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-          My <span className="text-primary"> Skills</span>
+          My <span className="text-primary"> Tech Stack</span>
         </h2>
 
         <div className="flex flex-wrap justify-center gap-4 mb-12">
@@ -62,27 +63,32 @@ export const SkillsSection = () => {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
           {filteredSkills.map((skill, key) => (
             <div
               key={key}
-              className="bg-card p-6 rounded-lg shadow-xs card-hover"
+              className="bg-card p-6 rounded-lg shadow-xs card-hover flex flex-col items-center justify-center text-center hover:scale-105 transition-transform duration-300"
             >
-              <div className="text-left mb-4">
-                <h3 className="font-semibold text-lg"> {skill.name}</h3>
-              </div>
-              <div className="w-full bg-secondary/50 h-2 rounded-full overflow-hidden">
-                <div
-                  className="bg-primary h-2 rounded-full origin-left animate-[grow_1.5s_ease-out]"
-                  style={{ width: skill.level + "%" }}
+              <div className="w-16 h-16 mb-4 flex items-center justify-center">
+                <img
+                  src={skill.logo}
+                  alt={`${skill.name} logo`}
+                  className="w-full h-full object-contain"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.nextSibling.style.display = 'block';
+                  }}
                 />
+                <div 
+                  className="w-full h-full bg-secondary/20 rounded-lg flex items-center justify-center text-2xl font-bold text-muted-foreground"
+                  style={{ display: 'none' }}
+                >
+                  {skill.name.charAt(0)}
+                </div>
               </div>
-
-              <div className="text-right mt-1">
-                <span className="text-sm text-muted-foreground">
-                  {skill.level}%
-                </span>
-              </div>
+              <h3 className="font-semibold text-sm text-center leading-tight">
+                {skill.name}
+              </h3>
             </div>
           ))}
         </div>
