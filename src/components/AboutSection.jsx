@@ -16,8 +16,7 @@ export const AboutSection = () => {
             </h3>
 
             <p className="text-muted-foreground">
-              With over 3 years of experience in fullstack development, I specialize in building scalable, high-performance applications with Java, Spring Boot, Python, SQL, and React. Skilled in AWS cloud-native solutions, CI/CD automation, and Agile practices, I focus on creating systems that are both robust and efficient.
-            </p>
+                I’m a software developer with industrial professional experience, specializing in backend engineering. My expertise lies in designing, building, and deploying scalable, cloud-based microservices that power robust and high-performance systems. Along the way, I’ve also gained exposure to frontend technologies, giving me a fullstack perspective while keeping my core focus on backend development. I recently graduated with a Master of Engineering in Software Engineering from Western University, Ontario.            </p>
 
             <p className="text-muted-foreground">
               I'm passionate about creating elegant solutions to complex
