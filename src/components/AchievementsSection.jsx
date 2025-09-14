@@ -3,26 +3,6 @@ import { Award, BookOpen, Cloud, ExternalLink } from "lucide-react";
 const achievements = [
   {
     id: 1,
-    type: "publication",
-    title: "Semantic Segmentation of PolSAR Images for Various Land Cover Features",
-    description: "Land-cover classification is crucial in remote sensing and supports sustainable urban planning amidst rising urban sprawl. Traditional mapping methods are slow, but Microwave Remote Sensing provides faster, reliable data for decision-making. This paper proposes using Semantic Segmentation on PolSAR images with a modified UNet for efficient land-cover analysis in rapidly growing cities.",
-    journal: "IEEE International Symposium on Geoscience and Remote Sensing (IGARSS)",
-    year: "2021",
-    icon: BookOpen,
-    link: "https://ieeexplore.ieee.org/document/9554297",
-  },
-  {
-    id: 2,
-    type: "publication", 
-    title: "Development of a generalized model to classify various land covers for ALOS-2 L-Band images using semantic segmentation",
-    description: "This work proposes a deep learning model using PolSAR float-32 coherency data with a modified UNet for land-cover segmentation. Trained on San Francisco and New Delhi and tested on Mumbai, it achieves high accuracy to aid urban planning.",
-    journal: "Elsevier - Advances in Space Research",
-    year: "2022",
-    icon: BookOpen,
-    link: "https://www.sciencedirect.com/science/article/abs/pii/S0273117722007116?via%3Dihub",
-  },
-  {
-    id: 3,
     type: "certification",
     title: "AWS Certified Developer - Associate",
     description: "Validates proficiency in building, deploying, and debugging applications on AWS, covering core services, best practices, and cloud development concepts.",
@@ -31,9 +11,10 @@ const achievements = [
     icon: Cloud,
     credentialId: "BNVZP64CX1QE1SWT",
     link: "https://aws.amazon.com/verification",
+    image: "/projects/AWS_DVA.png",
   },
   {
-    id: 4,
+    id: 2,
     type: "certification",
     title: "AWS Certified Cloud Practitioner", 
     description: "Foundational certification demonstrating overall understanding of AWS Cloud, services, and terminology.",
@@ -42,6 +23,29 @@ const achievements = [
     icon: Cloud,
     credentialId: "2V1144FCXBE4QLGY",
     link: "https://aws.amazon.com/verification",
+    image: "/projects/AWS_CCPP.png",
+  },
+  {
+    id: 3,
+    type: "publication",
+    title: "Semantic Segmentation of PolSAR Images for Various Land Cover Features",
+    description: "Land-cover classification is vital for sustainable urban planning as cities expand. Traditional mapping is slow, but Microwave Remote Sensing offers faster, reliable data. This paper applies Semantic Segmentation on PolSAR images with a modified UNet for efficient land-cover analysis.",
+    journal: "IEEE International Symposium on Geoscience and Remote Sensing (IGARSS)",
+    year: "2021",
+    icon: BookOpen,
+    link: "https://ieeexplore.ieee.org/document/9554297",
+    image: "/projects/IEEE.png",
+  },
+  {
+    id: 4,
+    type: "publication", 
+    title: "Development of a generalized model to classify various land covers for ALOS-2 L-Band images using semantic segmentation",
+    description: "This work proposes a deep learning model using PolSAR float-32 coherency data with a modified UNet for land-cover segmentation. Trained on San Francisco and New Delhi and tested on Mumbai, it achieves high accuracy to aid urban planning.",
+    journal: "Elsevier - Advances in Space Research",
+    year: "2022",
+    icon: BookOpen,
+    link: "https://www.sciencedirect.com/science/article/abs/pii/S0273117722007116?via%3Dihub",
+    image: "/projects/elsevier.png",
   },
 ];
 
@@ -68,13 +72,23 @@ export const AchievementsSection = () => {
                 className="group bg-card rounded-lg p-6 shadow-xs card-hover border"
               >
                 <div className="flex items-start gap-4">
-                  <div className={`p-3 rounded-lg ${
-                    achievement.type === 'publication' 
-                      ? 'bg-blue-100 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400' 
-                      : 'bg-orange-100 dark:bg-orange-900/20 text-orange-600 dark:text-orange-400'
-                  }`}>
-                    <IconComponent size={24} />
-                  </div>
+                  {achievement.image ? (
+                    <div className="flex-shrink-0">
+                      <img 
+                        src={achievement.image} 
+                        alt={achievement.title}
+                        className="w-16 h-16 rounded-lg object-cover border border-border/50"
+                      />
+                    </div>
+                  ) : (
+                    <div className={`p-3 rounded-lg ${
+                      achievement.type === 'publication' 
+                        ? 'bg-blue-100 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400' 
+                        : 'bg-orange-100 dark:bg-orange-900/20 text-orange-600 dark:text-orange-400'
+                    }`}>
+                      <IconComponent size={24} />
+                    </div>
+                  )}
                   
                   <div className="flex-1">
                     <div className="flex items-center gap-2 mb-2">

@@ -32,13 +32,37 @@ export const Navbar = () => {
     >
       <div className="container flex items-center justify-between">
         <a
-          className="text-xl font-bold text-primary flex items-center"
+          className="text-xl font-bold text-primary flex items-center gap-3"
           href="#hero"
         >
           <span className="relative z-10">
             <span className="text-glow text-foreground"> Musab Shaikh's </span>{" "}
             Portfolio
           </span>
+          <div className="flex items-center gap-2">
+            <a 
+              href="#achievements"
+              className="transition-transform duration-300 hover:scale-110"
+              title="View AWS Certifications"
+            >
+              <img 
+                src="/projects/AWS_CCPP.png" 
+                alt="AWS Certified Cloud Practitioner" 
+                className="w-8 h-8 rounded-full border border-border/50 hover:border-primary/50 transition-colors duration-300"
+              />
+            </a>
+            <a 
+              href="#achievements"
+              className="transition-transform duration-300 hover:scale-110"
+              title="View AWS Certifications"
+            >
+              <img 
+                src="/projects/AWS_DVA.png" 
+                alt="AWS Certified Developer Associate" 
+                className="w-8 h-8 rounded-full border border-border/50 hover:border-primary/50 transition-colors duration-300"
+              />
+            </a>
+          </div>
         </a>
 
         {/* desktop nav */}
